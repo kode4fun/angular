@@ -14,14 +14,20 @@ export class BikeService {
   constructor(private http: HttpClient) { }
 
   getBikes() {
+    let token = localStorage.getItem('access_token');
+
     //proxy.conf.json: Anything that begins with /server gets proxied into spring app as
     // http://localhost:8080/api/v1/bikes
     //Json payload of list of bikes are returned as Observable
-    return this.http.get('/server/api/v1/bikes');
+    return this.http.get('/server/api/v1/bikes',
+      { headers: new HttpHeaders().set('Authorization', 'Bearer ' + token) });
   }
 
   getBike(id: number) {
-    return this.http.get('/server/api/v1/bikes/' + id);
+    let token = localStorage.getItem('access_token');
+
+    return this.http.get('/server/api/v1/bikes/' + id,
+      { headers: new HttpHeaders().set('Authorization', 'Bearer ' + token) });
   }
 
   createBikeRegistration(bike) {
