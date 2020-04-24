@@ -4,12 +4,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-home', //<app-home> will be auto replace the <router-outlet> in app.component.html when called from AppRoutingModule
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
    models: string[] = [
      'Globo MTB 29 Full Suspension',
      'Globo Carbon Finer Race Series',

@@ -1,3 +1,14 @@
+//This script is used for production build to redirect any invalid requests to dist/index.html.
+
+//Install below packages before using this script.
+//npm install --save express-http-proxy
+//npm install --save cors
+//npm install --save port
+
+//For production build:  ng build --prod
+//Run the node server: node server.js
+
+
 // Get dependencies
 const express = require('express');
 const path = require('path');
